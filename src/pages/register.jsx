@@ -1,5 +1,5 @@
 // src/pages/register.jsx
-import Register from '../components/Register';
+import Register from '../components/Login';
 
 const RegisterPage = () => {
   return (

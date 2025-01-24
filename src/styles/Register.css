@@ -1,0 +1,93 @@
+/* Register.css */
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e6a4b53a, #ffa1ff52);
+  padding: 20px;
+}
+
+.register-card {
+  background: rgba(255, 255, 255, 0.747);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 450px;
+  width: 100%;
+}
+
+.register-card h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-title {
+  color: #6a11cb;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group-text {
+  background: #f8f9fa;
+  border: 1px solid #ced4da;
+  border-left: none;
+  cursor: pointer;
+}
+
+.input-icon {
+  color: #6a11cb;
+}
+
+.alert {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.alert-danger {
+  background-color: #ffebee;
+  color: #c62828;
+  border: 1px solid #ef9a9a;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: white;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #A888B5, #92baff);
+}
+
+.text-muted {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.text-muted a {
+  color: #6a11cb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.text-muted a:hover {
+  text-decoration: underline;
+}

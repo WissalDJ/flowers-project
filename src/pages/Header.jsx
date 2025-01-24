@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/Header.css";
-
+//-----------------------------
 const Header = () => {
+ 
   return (
     <header className="header">
       <nav className="navbar navbar-expand-lg navbar-dark bg-gradient ">
@@ -20,14 +21,15 @@ const Header = () => {
                 <Link className="nav-link" to="/">Home</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/plus">product</Link>
+                <Link className="nav-link" to="/plus">Product</Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/about">About Us</Link>
               </li>
               <li className="nav-item">
-                <Link className="btn btn-light btn-sm ms-2" to="/register">Sign Up</Link>
+                <Link className="btn btn-light btn-sm ms-2" to="/ProtectedRoute">deconection</Link>
               </li>
+             
               <li className="nav-item">
                 <Link className="btn btn-light btn-sm ms-2" to="/panier">🛒 Panier</Link>
               </li>
