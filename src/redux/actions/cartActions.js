@@ -1,4 +1,3 @@
-// src/redux/actions/cartActions.js
 import { ADD_TO_CART, REMOVE_FROM_CART, UPDATE_QUANTITY } from './types';
 
 export const addToCart = (product) => ({

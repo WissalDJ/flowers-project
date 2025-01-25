@@ -1,25 +1,26 @@
-
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getProducts } from '../redux/actions/productsActions';
 import { addToCart } from '../redux/actions/cartActions';
 import '../styles/DetailleProduct.css';
 
-const DetailleProduct = ({ produits, getProducts, addToCart }) => {
+const DetailleProduct = () => {
+  const dispatch = useDispatch();
+  const produits = useSelector((state) => state.products.produits);
   const { id } = useParams();
-  
+
   useEffect(() => {
     if (produits.length === 0) {
-      getProducts();
+      dispatch(getProducts());
     }
-  }, [getProducts, produits.length]);
+  }, [dispatch, produits.length]);
 
   const produit = produits.find((p) => p.id === parseInt(id));
 
   const handleAddToCart = () => {
     if (produit) {
-      addToCart(produit);
+      dispatch(addToCart(produit));
     }
   };
 
@@ -56,7 +57,7 @@ const DetailleProduct = ({ produits, getProducts, addToCart }) => {
               <div className="product-price">
                 {produit.price.toFixed(2)} €
               </div>
-              
+
               <div className="product-features">
                 <h4 className="mb-3">Caractéristiques</h4>
                 <div className="feature-item">
@@ -79,11 +80,8 @@ const DetailleProduct = ({ produits, getProducts, addToCart }) => {
                 <p className="product-description">{produit.description}</p>
               </div>
 
-              <button
-                onClick={handleAddToCart}
-                className="btn add-to-cart-btn"
-              >
-                <i className="bi bi-cart-plus me-2 "></i>
+              <button onClick={handleAddToCart} className="btn add-to-cart-btn">
+                <i className="bi bi-cart-plus me-2"></i>
                 Ajouter au panier
               </button>
             </div>
@@ -94,8 +92,4 @@ const DetailleProduct = ({ produits, getProducts, addToCart }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  produits: state.products.produits,
-});
-
-export default connect(mapStateToProps, { getProducts, addToCart })(DetailleProduct);
+export default DetailleProduct;

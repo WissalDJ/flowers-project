@@ -17,8 +17,7 @@ const Footer = () => {
             <h5 className="text-uppercase">Quick Links</h5>
             <ul className="list-unstyled">
               <li><a href="/about" className="text-muted">About Us</a></li>
-              <li><a href="/shop" className="text-muted">Shop</a></li>
-              <li><a href="/contact" className="text-muted">Contact</a></li>
+              <li><a href="/plus" className="text-muted">Shop</a></li>
               <li><a href="/privacy" className="text-muted">Privacy Policy</a></li>
             </ul>
           </div>

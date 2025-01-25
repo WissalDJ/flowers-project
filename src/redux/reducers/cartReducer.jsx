@@ -1,4 +1,3 @@
-// src/redux/reducers/cartReducer.js
 import { ADD_TO_CART, REMOVE_FROM_CART, UPDATE_QUANTITY } from '../actions/types';
 
 const initialState = {
@@ -44,5 +43,4 @@ const cartReducer = (state = initialState, action) => {
       return state;
   }
 };
-
 export default cartReducer;

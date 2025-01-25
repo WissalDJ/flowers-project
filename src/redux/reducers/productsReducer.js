@@ -1,9 +1,7 @@
 import { GET_PRODUCTS } from '../actions/productsActions';
-
 const initialState = {
   produits: [],
 };
-
 const productsReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_PRODUCTS:
@@ -15,5 +13,4 @@ const productsReducer = (state = initialState, action) => {
       return state;
   }
 };
-
 export default productsReducer;

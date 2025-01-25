@@ -1,6 +1,5 @@
 import React from 'react';
 import '../styles/about.css';
-
 const About = () => {
   return (
     <div className="container py-5">
@@ -9,7 +8,7 @@ const About = () => {
           <h1 className="display-4 mb-4" style={{ color: '#2c3e50', fontFamily: 'Playfair Display, serif' }}>
               Our Passion for Flowers
           </h1>
-          <p className="lead" style={{ color: '#555', lineHeight: '1.8' }}>
+          <p className="lead" style={{ color: '#555'}}>
           Since 2010, we have been creating magical moments through floral art. Each bouquet tells a story, each arrangement expresses an emotion.
           </p>
         </div>
@@ -80,9 +79,7 @@ const About = () => {
           <h2 className="mb-4" style={{ color: '#2c3e50', fontFamily: 'Playfair Display, serif' }}>Visit our shop</h2>
           <p className="lead mb-4">Discover our floral universe and let yourself be seduced by our unique creations.</p>
           <div className="d-flex justify-content-center gap-3">
-            <button className="btn btn-lg" style={{ backgroundColor: '#e74c3c', color: 'white' }}>
-               Contact Us
-            </button>
+            
           </div>
         </div>
       </div>
