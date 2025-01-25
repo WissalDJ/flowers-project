@@ -55,7 +55,7 @@ const About = () => {
         </div>
         <div className="col-md-6 mb-4">
           <div className="card border-0 shadow-lg">
-            <img src="images/bgf3.avif" className="card-img-top" style={{width: '200px',height: '200px',borderRadius: '50%'}} alt="Marie" />
+            <img src="images/team2.jpeg" className="card-img-top" style={{width: '200px',height: '200px',borderRadius: '50%'}} alt="Marie" />
             <div className="card-body text-center">
               <h3 className="h5 mb-2">Wissal AOUKILI</h3>
               <p className="text-muted">Chef  FloraSphere</p>
@@ -64,7 +64,7 @@ const About = () => {
         </div>
         <div className="col-md-6 mb-4">
           <div className="card border-0 shadow-lg">
-            <img src="images/bgf2.avif" className="card-img-top" style={{width: '200px',height: '200px',borderRadius: '50%'}} alt="Pierre" />
+            <img src="images/team.jpeg" className="card-img-top" style={{width: '200px',height: '200px',borderRadius: '50%'}} alt="Pierre" />
             <div className="card-body text-center">
               <h3 className="h5 mb-2">Aissa EL QUADAOUI</h3>
               <p className="text-muted">Designer Floral</p>

@@ -1,19 +1,22 @@
 // src/components/Panier.jsx
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart, updateQuantity } from '../redux/actions/cartActions';
 
-const Panier = ({ cart, removeFromCart, updateQuantity }) => {
+const Panier = () => {
+  const cart = useSelector(state => state.cart.items);
+  const dispatch = useDispatch();
+
   const calculateTotal = () => {
     return cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
   };
 
   return (
     <div className="container py-5">
-      <h2 className="text-center mb-4">Mon Panier</h2>
+      <h2 className="text-center mb-4">My Cart</h2>
       {cart.length === 0 ? (
         <div className="alert alert-info text-center">
-          Votre panier est vide
+          Your cart is empty
         </div>
       ) : (
         <>
@@ -21,9 +24,9 @@ const Panier = ({ cart, removeFromCart, updateQuantity }) => {
             <table className="table table-hover">
               <thead className="table-light">
                 <tr>
-                  <th>Produit</th>
-                  <th>Prix</th>
-                  <th>Quantité</th>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
                   <th>Total</th>
                   <th>Action</th>
                 </tr>
@@ -41,12 +44,12 @@ const Panier = ({ cart, removeFromCart, updateQuantity }) => {
                         <span>{item.title}</span>
                       </div>
                     </td>
-                    <td>{item.price} €</td>
+                    <td>{item.price} MAD</td>
                     <td>
                       <div className="input-group" style={{ width: '120px' }}>
                         <button 
                           className="btn btn-outline-secondary"
-                          onClick={() => updateQuantity(item.id, Math.max(1, item.quantity - 1))}
+                          onClick={() => dispatch(updateQuantity(item.id, Math.max(1, item.quantity - 1)))}
                         >
                           -
                         </button>
@@ -54,12 +57,12 @@ const Panier = ({ cart, removeFromCart, updateQuantity }) => {
                           type="number" 
                           className="form-control text-center"
                           value={item.quantity}
-                          onChange={(e) => updateQuantity(item.id, parseInt(e.target.value) || 1)}
+                          onChange={(e) => dispatch(updateQuantity(item.id, parseInt(e.target.value) || 1))}
                           min="1"
                         />
                         <button 
                           className="btn btn-outline-secondary"
-                          onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                          onClick={() => dispatch(updateQuantity(item.id, item.quantity + 1))}
                         >
                           +
                         </button>
@@ -69,7 +72,7 @@ const Panier = ({ cart, removeFromCart, updateQuantity }) => {
                     <td>
                       <button 
                         className="btn btn-danger btn-sm"
-                        onClick={() => removeFromCart(item.id)}
+                        onClick={() => dispatch(removeFromCart(item.id))}
                       >
                         <i className="bi bi-trash"></i>
                       </button>
@@ -83,14 +86,14 @@ const Panier = ({ cart, removeFromCart, updateQuantity }) => {
             <div className="col-md-4">
               <div className="card">
                 <div className="card-body">
-                  <h5 className="card-title">Récapitulatif</h5>
+                  <h5 className="card-title">Summary</h5>
                   <hr />
                   <div className="d-flex justify-content-between mb-3">
                     <span>Total</span>
-                    <strong>{calculateTotal()} €</strong>
+                    <strong>{calculateTotal()} MAD</strong>
                   </div>
                   <button className="btn btn-primary w-100">
-                    Procéder au paiement
+                  Proceed to payment
                   </button>
                 </div>
               </div>
@@ -102,7 +105,4 @@ const Panier = ({ cart, removeFromCart, updateQuantity }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  cart: state.cart.items,
-});
-export default connect(mapStateToProps, { removeFromCart, updateQuantity })(Panier);
+export default Panier;

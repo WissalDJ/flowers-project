@@ -28,7 +28,7 @@ const DetailleProduct = () => {
     return (
       <div className="loading-container">
         <div className="spinner-border loading-spinner text-primary" role="status">
-          <span className="visually-hidden">Chargement...</span>
+          <span className="visually-hidden">Load...</span>
         </div>
       </div>
     );
@@ -52,24 +52,24 @@ const DetailleProduct = () => {
               <h1 className="product-title">{produit.title}</h1>
               <p className="product-reference">
                 <i className="bi bi-upc me-2"></i>
-                Référence: #{produit.id}
+                Reference: #{produit.id}
               </p>
               <div className="product-price">
                 {produit.price.toFixed(2)} €
               </div>
 
               <div className="product-features">
-                <h4 className="mb-3">Caractéristiques</h4>
+                <h4 className="mb-3">Characteristics</h4>
                 <div className="feature-item">
                   <i className="bi bi-tag feature-icon"></i>
-                  Catégorie: {produit.category}
+                  Category: {produit.category}
                 </div>
                 {produit.rating && (
                   <div className="feature-item">
                     <i className="bi bi-star-fill rating-stars"></i>
                     {produit.rating.rate}/5
                     <span className="ms-2 text-muted">
-                      ({produit.rating.count} avis)
+                      ({produit.rating.count} opinion)
                     </span>
                   </div>
                 )}
@@ -82,7 +82,7 @@ const DetailleProduct = () => {
 
               <button onClick={handleAddToCart} className="btn add-to-cart-btn">
                 <i className="bi bi-cart-plus me-2"></i>
-                Ajouter au panier
+                Add to cart
               </button>
             </div>
           </div>

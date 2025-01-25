@@ -28,7 +28,7 @@ const ProduitsVedette = () => {
 
   return (
     <div className="container py-5">
-      <h2 className="text-center mb-4 title">Produits Vedettes</h2>
+      <h2 className="text-center mb-4 title">Featured Products</h2>
       
       {/* Search */}
       <div className="row mb-4">
@@ -37,7 +37,7 @@ const ProduitsVedette = () => {
             <input
               type="text"
               className="bg-search"
-              placeholder="Rechercher des produits..."
+              placeholder="Search Products..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
@@ -62,14 +62,14 @@ const ProduitsVedette = () => {
                   <div className="mt-auto">
                     <div className="d-flex justify-content-between">
                       <Link to={`/details/${produit.id}`} className="btn btn-outline btn-detaille">
-                        Voir Détails
+                      View Details
                       </Link>
                       <button
                         onClick={() => handleAddToCart(produit)}
                         className="btn btn-ajouter"
                       >
                         <i className="bi bi-cart-plus me-2"></i>
-                        Ajouter au panier
+                        Add to cart
                       </button>
                     </div>
                   </div>
@@ -79,7 +79,7 @@ const ProduitsVedette = () => {
           ))
         ) : (
           <div className="col-12 text-center message-error">
-            <p>Aucun produit trouvé</p>
+            <p>No products found</p>
           </div>
         )}
       </div>
